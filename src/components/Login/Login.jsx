@@ -40,7 +40,7 @@ export function Login(){
             'Content-Type': 'application/json'
         }
 
-        await api.post("/login", user, {headers})
+        await api.post("/users/login", user, {headers})
         .then((response) =>{
             setStatus({
                 loading:false

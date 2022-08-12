@@ -10,6 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'
 
 export const ListaUsuarios = () =>{
     const { authenticated, handleLogout} = useContext(Context);
+    
 
     const [data, setData] = useState([]);
 
@@ -72,6 +73,7 @@ export const ListaUsuarios = () =>{
 
 
     const getUsers = async () =>{
+        
 
         const headers = {
             'headers': {
@@ -80,7 +82,7 @@ export const ListaUsuarios = () =>{
             },
         }   
         
-        await api.get("/users", headers)
+        await api.get("/users/all", headers)
         .then((response) =>{
             setData(response.data.users);
             setStatus({loading:false})
